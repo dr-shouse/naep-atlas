@@ -325,3 +325,8 @@ svg text { font-family: var(--mono); font-size: 10px; fill: var(--ink-soft); }
   .topbar-meta { display: none; }
   .panel-head > div:first-child { min-width: 0; }
 }
+
+.palette-pick { margin-left: 12px; display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10px;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); white-space: nowrap; }
+.palette-pick select { font-family: var(--mono); font-size: 11px; text-transform: none; letter-spacing: 0;
+  color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 3px; background: var(--panel); padding: 3px 6px; }

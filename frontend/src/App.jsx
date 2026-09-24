@@ -4,7 +4,7 @@ import {
   prevYear, snapYear, fmt1, signed,
 } from "./lib/data";
 import { diffTest, rankRanges } from "./lib/stats";
-import { ABOVE, BELOW } from "./lib/color";
+import { ABOVE, BELOW, PALETTES, PALETTE_KEYS, DEFAULT_PALETTE, setPalette } from "./lib/color";
 import YearScrubber from "./components/YearScrubber";
 import TipJar from "./components/TipJar";
 import Change from "./views/Change";
@@ -35,7 +35,15 @@ function readUrl() {
     sel: stateIndex[q.get("s")] ? q.get("s") : "KY",
     tab: TABS.some(t => t.id === q.get("t")) ? q.get("t") : "map",
     compare: (q.get("c") || "").split(",").filter(c => stateIndex[c]).slice(0, 5),
+    palette: PALETTES[q.get("p")] ? q.get("p") : storedPalette(),
   };
+}
+
+function storedPalette() {
+  try {
+    const v = localStorage.getItem("naep-atlas-palette");
+    return PALETTES[v] ? v : DEFAULT_PALETTE;
+  } catch { return DEFAULT_PALETTE; }
 }
 
 export default function App() {
@@ -45,12 +53,20 @@ export default function App() {
   const [sel, setSel]         = useState(init.sel);
   const [tab, setTab]         = useState(init.tab);
   const [compare, setCompare] = useState(init.compare);
+  const [palette, setPal]     = useState(init.palette);
+  setPalette(palette); // live bindings in lib/color.js; idempotent
+
+  const choosePalette = id => {
+    setPal(id);
+    try { localStorage.setItem("naep-atlas-palette", id); } catch { /* private mode */ }
+  };
 
   useEffect(() => {
     const q = new URLSearchParams({ a, y: year, s: sel, t: tab });
     if (compare.length) q.set("c", compare.join(","));
+    if (palette !== DEFAULT_PALETTE) q.set("p", palette);
     window.history.replaceState({}, "", `${window.location.pathname}?${q}`);
-  }, [a, year, sel, tab, compare]);
+  }, [a, year, sel, tab, compare, palette]);
 
   const switchAssessment = k => { setA(k); setYear(y => snapYear(k, y)); };
   const selectState = code => { setSel(code); setCompare(c => c.filter(x => x !== code)); };
@@ -127,6 +143,14 @@ export default function App() {
           ))}
           <span className="spacer" />
           <span className="topbar-meta">{A.label}</span>
+          <label className="palette-pick">
+            <span>Colors</span>
+            <select value={palette} onChange={e => choosePalette(e.target.value)} aria-label="Color palette">
+              {PALETTE_KEYS.map(k => (
+                <option key={k} value={k}>{PALETTES[k].label}{PALETTES[k].safe ? " (colorblind-safe)" : ""}</option>
+              ))}
+            </select>
+          </label>
           <TipJar />
         </div>
 

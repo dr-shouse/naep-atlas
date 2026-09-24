@@ -8,7 +8,7 @@ import { assessments, states, point, nation, prevYear, fmt1, signed } from "../l
 import { diffTest, sigLabel } from "../lib/stats";
 import {
   rampColor, divergeColor, hexToRgb, niceDomain,
-  RAMP, DIVERGE, ABOVE, BELOW, SAME, MISSING,
+  RAMP, DIVERGE, ABOVE, BELOW, SAME, MISSING, PALETTE_ID,
 } from "../lib/color";
 
 // No basemap tiles: a state choropleth reads better on plain paper, and
@@ -82,7 +82,7 @@ export default function StateMap({ a, year, metric = "score", selected, compare 
       m[s.code] = hexToRgb(d.color, d.alpha);
     }
     return m;
-  }, [a, year, metric]);
+  }, [a, year, metric, PALETTE_ID]);
 
   const layers = [
     new GeoJsonLayer({
@@ -193,7 +193,7 @@ function Legend({ a, metric, year }) {
         <span>{py ? `${py} → ${year}` : "first cycle: no prior year"}</span>
         {DIVERGE.map((c, i) => (
           <span key={c} className="key">
-            <span className="swatch" style={{ background: c, border: c === "#f1f0ea" ? "1px solid var(--rule)" : 0 }} />
+            <span className="swatch" style={{ background: c, border: c === MISSING ? "1px solid var(--rule)" : 0 }} />
             {i === 0 ? `−${CHANGE_MAX}` : i === DIVERGE.length - 1 ? `+${CHANGE_MAX}` : i === 3 ? "0" : ""}
           </span>
         ))}
