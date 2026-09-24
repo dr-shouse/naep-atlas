@@ -3,6 +3,10 @@
   // Deploy: npm run build && npx wrangler deploy
   "name": "naep-atlas",
   "compatibility_date": "2026-01-01",
+  // Custom domain: Cloudflare creates the DNS record + certificate.
+  "routes": [
+    { "pattern": "reportcard.neverlost.studio", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./dist",
     // Native SPA fallback: unknown paths serve index.html.
