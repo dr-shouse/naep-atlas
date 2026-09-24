@@ -1,0 +1,12 @@
+{
+  // Cloudflare Worker serving the NAEP Atlas frontend (static assets).
+  // Deploy: npm run build && npx wrangler deploy
+  "name": "naep-atlas",
+  "compatibility_date": "2026-01-01",
+  "assets": {
+    "directory": "./dist",
+    // Native SPA fallback: unknown paths serve index.html.
+    // Do NOT add a _redirects file (Workers assets rejects the /* rule).
+    "not_found_handling": "single-page-application"
+  }
+}
