@@ -1,16 +1,18 @@
-// Palette shared with Sundays: jet blues for magnitude, safety orange for
-// the "bad" side of a diverging scale. Orange/blue stays readable for the
-// common forms of color-vision deficiency.
+// Green = better, red = worse, on every map and chart. Ramps follow
+// ColorBrewer RdYlGn with a pale midpoint; the lightness steps keep the
+// order readable for most red-green color-vision deficiencies, and every
+// view also carries numbers in hovers, legends and labels.
 
-export const RAMP = ["#e6f1fb", "#b5d4f4", "#85b7eb", "#378add", "#185fa5", "#0c447c"];
+// Score: low (red) → mid (yellow) → high (green). Six bins.
+export const RAMP = ["#d73027", "#fc8d59", "#fee08b", "#d9ef8b", "#91cf60", "#1a9850"];
 export const NEUTRAL = "#e3e2dc";
 export const MISSING = "#f1f0ea";
-export const ABOVE = "#185fa5";
-export const BELOW = "#e2540f";
+export const ABOVE = "#1a9850";   // better: significantly above / gained
+export const BELOW = "#d73027";   // worse: significantly below / declined
 export const SAME  = "#c6ccd2";
 
-// Diverging: big drop → orange, no change → paper, big gain → blue.
-export const DIVERGE = ["#b8430b", "#e2540f", "#f2a57d", "#f1f0ea", "#85b7eb", "#378add", "#185fa5"];
+// Diverging: big drop → red, no change → paper, big gain → green.
+export const DIVERGE = ["#d73027", "#f46d43", "#fdae61", "#f1f0ea", "#a6d96a", "#66bd63", "#1a9850"];
 
 export function hexToRgb(h, a = 255) {
   const n = parseInt(h.slice(1), 16);

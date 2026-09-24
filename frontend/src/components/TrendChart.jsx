@@ -2,7 +2,8 @@ import { useMemo } from "react";
 import { assessments, series, stateIndex, NATION } from "../lib/data";
 import { Z } from "../lib/stats";
 
-export const LINE_COLORS = ["#2a78d6", "#e2540f", "#1d9e75", "#7a5cc7", "#b0891a", "#c2417d"];
+// Comparison lines avoid red and green, which now mean worse/better.
+export const LINE_COLORS = ["#2a78d6", "#7a5cc7", "#b0891a", "#c2417d", "#4a9fb5", "#12263a"];
 
 /**
  * State trend vs national public. First code gets a 95% CI band; the rest
