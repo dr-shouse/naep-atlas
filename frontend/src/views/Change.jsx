@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { shortName, assessments, point, states, nation, NATION, signed } from "../lib/data";
+import { shortName, placesLabel, assessments, point, states, nation, NATION, signed } from "../lib/data";
 import { diffTest, Z } from "../lib/stats";
 import { ABOVE, BELOW } from "../lib/color";
 
@@ -54,7 +54,7 @@ export default function Change({ a, selected, setSelected }) {
         <div className="panel-head">
           <div>
             <h2>Change, {from} → {to}</h2>
-            <p className="sub">{A.label}. Every state that took part in both years, sorted by change. Solid bars are statistically significant (p &lt; .05); whiskers are 95% intervals for the change.</p>
+            <p className="sub">{A.label}. Every state (and DC) that took part in both years, sorted by change. Solid bars are statistically significant (p &lt; .05); whiskers are 95% intervals for the change.</p>
           </div>
         </div>
 
@@ -78,8 +78,8 @@ export default function Change({ a, selected, setSelected }) {
 
         <div className="stat-strip">
           <Stat label="Nation" value={nat ? signed(nat.t.d) : "—"} note={nat ? (nat.t.sig ? "significant" : "not significant") : ""} />
-          <Stat label="Sig. gains" value={up} color={ABOVE} note={`of ${st.length} states`} />
-          <Stat label="Sig. declines" value={down} color={BELOW} note={`of ${st.length} states`} />
+          <Stat label="Sig. gains" value={up} color={ABOVE} note={`of ${placesLabel(st)}`} />
+          <Stat label="Sig. declines" value={down} color={BELOW} note={`of ${placesLabel(st)}`} />
           <Stat label="No sig. change" value={st.length - up - down} note={missing ? `${missing} not in both years` : ""} />
         </div>
         {r2 && <p className="note">One end of this window uses the R2 sample (accommodations not permitted) and the other R3; NCES reports these as a single trend, but read small changes with care.</p>}

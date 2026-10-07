@@ -58,6 +58,12 @@ export function snapYear(a, year) {
   return ys.reduce((best, y) => Math.abs(y - year) < Math.abs(best - year) ? y : best, ys[ys.length - 1]);
 }
 
+/** "50 states + DC" rather than "51 states": DC is a jurisdiction, not a state. */
+export function placesLabel(rows) {
+  const n = rows.length, dc = rows.some(r => r.code === "DC");
+  return dc ? `${n - 1} states + DC` : `${n} states`;
+}
+
 /** Chart-friendly name. */
 export const shortName = n => (n === "District of Columbia" ? "D.C." : n);
 

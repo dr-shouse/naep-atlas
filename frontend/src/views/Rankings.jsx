@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { shortName, assessments, nation, yearRows, point } from "../lib/data";
+import { shortName, placesLabel, assessments, nation, yearRows, point } from "../lib/data";
 import { rankRanges, diffTest, Z } from "../lib/stats";
 import { ABOVE, BELOW, SAME } from "../lib/color";
 
@@ -35,7 +35,7 @@ export default function Rankings({ a, year, selected, setSelected }) {
         </div>
         {selRow ? (
           <p className="callout">
-            <b>{selRow.name}</b> scored {selRow.value.toFixed(1)}: ranked {selRow.rank} of {rows.length} by point estimate,
+            <b>{selRow.name}</b> scored {selRow.value.toFixed(1)}: ranked {selRow.rank} of {rows.length} ({placesLabel(rows)}) by point estimate,
             but anywhere from <b>{selRow.best}</b> to <b>{selRow.worst}</b> once sampling error is considered.
             {" "}{sameAsSel} other {sameAsSel === 1 ? "state is" : "states are"} not significantly different.
           </p>

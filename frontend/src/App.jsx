@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import {
   assessments, ASSESSMENT_KEYS, stateIndex, yearRows, nation, point,
-  prevYear, snapYear, fmt1, signed,
+  prevYear, snapYear, fmt1, signed, placesLabel,
 } from "./lib/data";
 import { diffTest, rankRanges } from "./lib/stats";
 import { ABOVE, BELOW, PALETTES, PALETTE_KEYS, DEFAULT_PALETTE, setPalette } from "./lib/color";
@@ -103,7 +103,7 @@ export default function App() {
           </div>
         </div>
         <div className="rail-head">
-          <span>{year} · {ranked.length} tested</span>
+          <span>{year} · {placesLabel(ranked)}</span>
           <span>nation {n?.value.toFixed(0)}</span>
         </div>
         <div className="rail-list">

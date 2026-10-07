@@ -1,24 +1,173 @@
-# NAEP Atlas social media kit
+# NAEP Atlas social media kit: what Covid did to test scores
 
 Site: https://reportcard.neverlost.studio
 
-Every number below comes from the Atlas's own data (NAEP Data Service, NCES) and its
-significance test. A few borderline results can differ from the official NAEP Data
-Explorer, so check there before quoting a specific state in a formal setting.
+## Before you post
+
+- **States.** Every count here is out of the **50 states**. Washington, DC is tested too and
+  is mentioned separately where it matters.
+- **"After Covid" means 2019 vs 2022.** NAEP tested in early 2019 and early 2022, the cycles on
+  either side of the school closures. It measures what changed between them, not why.
+- **Reading was slipping before Covid.** National reading scores fell between 2017 and 2019.
+  The national trend image shows this; don't claim Covid started the decline in reading.
+- **Significance.** "Significantly" means the Atlas's own test on the official means and
+  standard errors (NAEP Data Service, NCES). A few borderline calls can differ from the NAEP
+  Data Explorer, so check a state there before quoting it formally.
 
 ## Images
 
 | File | Size | Use for |
 |---|---|---|
-| `og-link-card-1200x630.png` | 1200×630 | Link preview on X, LinkedIn, Facebook, Bluesky, Slack, iMessage. Also installed in the site as `frontend/public/og.png`. |
-| `square-launch-1080.png` | 1080×1080 | Launch post, any platform |
-| `square-pandemic-drop-1080.png` | 1080×1080 | "50 of 51" finding |
-| `square-rank-range-1080.png` | 1080×1080 | Rank range explainer |
-| `square-mississippi-1080.png` | 1080×1080 | Mississippi reading story |
-| `portrait-launch-1080x1350.png` | 1080×1350 | Instagram and LinkedIn feed (takes more screen) |
-| `story-launch-1080x1920.png` | 1080×1920 | Instagram / Facebook stories, TikTok, Shorts cover |
-| `banner-1500x500.png` | 1500×500 | X header. Crop the center for LinkedIn (1584×396). |
-| `avatar-800.png` | 800×800 | Profile picture (safe inside a circle crop) |
+| `covid-1-overview-1080.png` | 1080×1080 | "Not one state gained": all four tests |
+| `covid-2-grade8-math-1080.png` | 1080×1080 | "49 of 50 states" in grade 8 math |
+| `covid-3-national-trend-1080.png` | 1080×1080 | National lines: math fell hardest, reading still falling |
+| `covid-4-recovery-1080.png` | 1080×1080 | "Who is back to 2019?" |
+| `covid-5-state-drops-1080x1350.png` | 1080×1350 | Every state's grade 8 math drop, ranked |
+| `covid-story-1080x1920.png` | 1080×1920 | Stories / vertical video cover |
+| `covid-link-card-1200x630.png` | 1200×630 | Landscape image for X and LinkedIn posts |
+| `og-link-card-1200x630.png` | 1200×630 | General link preview (installed on the site) |
+| `square-rank-range-1080.png` | 1080×1080 | Extra, not about Covid: rank ranges |
+| `square-mississippi-1080.png` | 1080×1080 | Extra, not about Covid: Mississippi reading |
+| `square-launch-1080.png`, `portrait-launch-1080x1350.png`, `story-launch-1080x1920.png` | | General launch images |
+| `banner-1500x500.png`, `avatar-800.png` | | Profile header and picture |
+
+## The numbers (50 states)
+
+| Test | Nation, 2019→2022 | States significantly lower in 2022 | Nation, 2019→2024 | States still significantly below 2019 in 2024 | States significantly above 2019 |
+|---|---|---|---|---|---|
+| Grade 4 math | −5.1 | 41 | −2.7 | 22 | 1 (Alabama) |
+| Grade 8 math | −7.9 | 49 | −8.8 | 49 | 0 |
+| Grade 4 reading | −3.3 | 30 | −5.2 | 39 | 1 (Louisiana) |
+| Grade 8 reading | −2.9 | 34 | −5.3 | 39 | 0 |
+
+No state gained significantly on any of the four tests between 2019 and 2022.
+
+## Post 1: the headline
+
+Image: `covid-1-overview-1080.png` (or `covid-story-1080x1920.png`)
+
+**Short (X, Bluesky, Threads):**
+
+> Not one state gained.
+>
+> Between 2019 and 2022, the NAEP tests on either side of Covid, no state improved significantly in reading or math, in grade 4 or grade 8.
+>
+> 49 of 50 fell in grade 8 math.
+> reportcard.neverlost.studio
+
+**Long (LinkedIn, Facebook):**
+
+> The Nation's Report Card tested students in early 2019 and again in early 2022. Those two cycles sit on either side of the Covid school closures.
+>
+> Across all 50 states and all four tests, not a single state posted a statistically significant gain. The number of states that fell significantly:
+>
+> • Grade 8 math: 49
+> • Grade 4 math: 41
+> • Grade 8 reading: 34
+> • Grade 4 reading: 30
+>
+> I built NAEP Atlas to make this easy to see state by state, with the margins of error included, using the official NCES data.
+> https://reportcard.neverlost.studio/?a=math-8&t=change
+
+**Alt text:** Headline "Not one state gained" above four small US maps, one each for grade 4 math, grade 8 math, grade 4 reading and grade 8 reading. Each is shaded purple by how far the state's score fell from 2019 to 2022. Labels read 41, 49, 30 and 34 of 50 states fell.
+
+## Post 2: grade 8 math
+
+Image: `covid-2-grade8-math-1080.png`
+
+**Short:**
+
+> 49 of 50 states scored significantly lower in grade 8 math in 2022 than in 2019.
+>
+> Utah was the one exception. The national average fell 8 points, the largest drop on any of the four tests.
+> reportcard.neverlost.studio
+
+**Long:**
+
+> Grade 8 math took the hardest hit. Between 2019 and 2022 the national average fell 8 points, and 49 of 50 states scored significantly lower. Utah was the only state whose change was within the margin of error. Washington, DC fell too.
+>
+> The biggest state declines were about 12 points: Oklahoma, Delaware and West Virginia.
+>
+> https://reportcard.neverlost.studio/?a=math-8&t=change
+
+**Alt text:** Large text "49 of 50 states scored significantly lower in grade 8 math after Covid" above a US map shaded purple by the size of each state's decline from 2019 to 2022. Utah is the only faded state.
+
+## Post 3: the national trend
+
+Image: `covid-3-national-trend-1080.png`
+
+**Short:**
+
+> Math fell hardest after Covid. Reading is still falling.
+>
+> Since 2019, national scores are down 8.8 points in grade 8 math and about 5 in reading. Only grade 4 math has turned back up, and it's still 2.7 below.
+> reportcard.neverlost.studio
+
+**Long:**
+
+> Four tests, four different paths since 2019:
+>
+> • Grade 8 math fell 7.9 points by 2022 and slipped further to −8.8 in 2024.
+> • Grade 4 math fell 5.1 points, then recovered about half of it.
+> • Grade 4 and grade 8 reading fell about 3 points by 2022, and both fell significantly again by 2024. They're now more than 5 points below 2019.
+>
+> One caution: reading was already slipping before Covid. National reading scores dropped between 2017 and 2019. The pandemic didn't start that decline, but nothing since has reversed it.
+>
+> https://reportcard.neverlost.studio
+
+**Alt text:** Line chart of national average scores from 2013 to 2024 for four tests, plotted as points above or below 2019. All four lines drop after a shaded band marked Covid. Grade 8 math ends lowest at minus 8.8. Grade 4 math rebounds to minus 2.7. Both reading lines keep falling to about minus 5.
+
+## Post 4: the recovery
+
+Image: `covid-4-recovery-1080.png`
+
+**Short:**
+
+> Who is back to 2019?
+>
+> In 2024, 49 of 50 states were still significantly below their pre-Covid score in grade 8 math. In reading, 39.
+>
+> Two states are above 2019 on any test: Alabama (grade 4 math) and Louisiana (grade 4 reading).
+> reportcard.neverlost.studio
+
+**Long:**
+
+> Five years after the last pre-Covid test, how many states are back to where they were?
+>
+> States still significantly below their 2019 score in 2024:
+> • Grade 8 math: 49 of 50
+> • Grade 4 reading: 39
+> • Grade 8 reading: 39
+> • Grade 4 math: 22
+>
+> Grade 4 math is the bright spot: 27 states are statistically level with 2019 again, and Alabama is above it. In grade 4 reading, Louisiana is the only state above its 2019 score.
+>
+> No state is above 2019 in either grade 8 subject.
+>
+> https://reportcard.neverlost.studio/?a=math-4&t=change
+
+**Alt text:** Headline "Who is back to 2019?" above four horizontal bars, each representing the 50 states in 2024. Grade 4 math: 22 still significantly below 2019, 27 not significantly different, 1 above. Grade 8 math: 49 below, 1 not different. Grade 4 reading: 39 below, 10 not different, 1 above. Grade 8 reading: 39 below, 11 not different.
+
+## Post 5: every state
+
+Image: `covid-5-state-drops-1080x1350.png`
+
+**Short:**
+
+> How far did your state fall?
+>
+> Grade 8 math, 2019 to 2022, all 50 states. The range runs from about 12 points (Oklahoma, Delaware, West Virginia) down to about 4 (Idaho, Alabama) and Utah at under 3.
+>
+> Look up any state, any test:
+> reportcard.neverlost.studio
+
+**Alt text:** Ranked bar chart titled "How far each state fell" showing each of the 50 states' change in grade 8 math from 2019 to 2022. Oklahoma is first at minus 12.6 points and Utah is last at minus 2.7, marked not significant.
+
+## Link to a single state
+
+Change the two-letter code to open the site on any state:
+
+`https://reportcard.neverlost.studio/?a=math-8&y=2024&s=TX&t=map`
 
 ## Profile text
 
@@ -27,126 +176,29 @@ Explorer, so check there before quoting a specific state in a formal setting.
 **Bio (under 160 characters):**
 State results from the Nation's Report Card, 1990–2024, with the margins of error. Free. A NeverLost Studio project.
 
-**One-liner:**
-State test scores, with the margin of error.
+## Extras (not about Covid)
 
-## Post 1: launch
-
-Image: `square-launch-1080.png` or `portrait-launch-1080x1350.png`
-
-**Short (X, Bluesky, Threads):**
-
-> Which states really beat the national average?
->
-> NAEP Atlas maps every state's Nation's Report Card results from 1990 to 2024, and only colors a difference when it's statistically significant.
->
-> Free, no sign-in.
-> reportcard.neverlost.studio
-
-**Long (LinkedIn, Facebook):**
-
-> State rankings on the Nation's Report Card get quoted as if 12th and 20th were different places. Often they aren't: NAEP is a sample, every score has a margin of error, and many states can't be told apart.
->
-> I built NAEP Atlas to show that plainly. It covers grade 4 and grade 8 reading and math for every state from 1990 through 2024, using the official NCES data, and it tests every comparison:
->
-> • a map that colors a state only when it differs significantly from the nation
-> • change between any two years, with the significant changes marked
-> • rank ranges instead of single ranks
-> • a time-lapse of all 30+ years
->
-> It's free and there's no sign-in.
-> https://reportcard.neverlost.studio
-
-**Alt text:** Map of the United States titled "Which states really beat the national average?" for grade 8 math in 2024. States are teal where they scored significantly above the nation, purple where significantly below, and gray where not significantly different.
-
-## Post 2: the pandemic drop
-
-Image: `square-pandemic-drop-1080.png`
-
-**Short:**
-
-> 50 of 51.
->
-> That's how many states (plus DC) scored significantly lower in grade 8 math in 2022 than in 2019. Utah was the exception.
->
-> Two years later, not one has posted a significant gain.
-> reportcard.neverlost.studio
-
-**Long:**
-
-> Between 2019 and 2022, grade 8 math scores fell significantly in 50 of 51 states and DC. Only Utah's change was within the margin of error.
->
-> The 2024 results didn't undo it. No state gained significantly between 2022 and 2024, and 50 of 51 are still significantly below where they were in 2019 (Tennessee is now the exception).
->
-> Grade 4 math looks better: 14 states gained significantly since 2022. But only one, Alabama, is significantly above its 2019 score.
->
-> You can pick any two years and any of the four tests here:
-> https://reportcard.neverlost.studio/?a=math-8&t=change
-
-**Alt text:** Large text reading "50 of 51 states scored significantly lower in grade 8 math in 2022 than in 2019." Below it, a US map shaded purple by the size of each state's decline, with Utah the only faded state.
-
-## Post 3: rank ranges
-
-Image: `square-rank-range-1080.png`
-
-**Short:**
+**Rank ranges** (`square-rank-range-1080.png`)
 
 > Kentucky ranked 28th in grade 8 math in 2024.
 >
 > Or 24th. Or 40th. Its score can't be statistically separated from 16 other states.
->
-> NAEP Atlas shows the range, because a single rank claims more than the data can.
 > reportcard.neverlost.studio
 
-**Long:**
+Alt text: Headline "Ranked 28th. Or 24th. Or 40th." above a chart of grade 8 math scores in 2024 for the 50 states and DC, each with a 95 percent confidence interval. Kentucky is highlighted with a shaded band over the states not significantly different from it.
 
-> "We're ranked 28th" sounds exact. It isn't.
->
-> Kentucky's 2024 grade 8 math score puts it 28th by raw average. But 16 other states have scores that can't be statistically distinguished from Kentucky's, so its honest position is somewhere between 24th and 40th.
->
-> That's true of most states in most years. NAEP Atlas reports a rank range for every state: the best and worst place it could hold given which differences are actually significant.
->
-> https://reportcard.neverlost.studio/?a=math-8&y=2024&s=KY&t=rankings
+**Mississippi** (`square-mississippi-1080.png`)
 
-**Alt text:** Headline "Ranked 28th. Or 24th. Or 40th." above a chart of all 51 state scores for grade 8 math in 2024, each with a 95 percent confidence interval. Kentucky is highlighted, and a shaded band covers the 16 states whose scores are not significantly different from it.
-
-## Post 4: Mississippi
-
-Image: `square-mississippi-1080.png`
-
-**Short:**
-
-> Mississippi, grade 4 reading:
->
-> 1992: 16 points below the nation
-> 2024: 4 points above it, a statistically significant lead
->
-> The whole trend line, with its margin of error:
+> Mississippi, grade 4 reading: 16 points below the nation in 1992, 4 points above it in 2024.
 > reportcard.neverlost.studio
 
-**Long:**
-
-> In 1992, Mississippi's fourth graders scored 16 points below the national average in reading. In 2024 they scored 4 points above it, and that lead is statistically significant.
->
-> Most of the climb came between 2013 and 2019, when the state gained about 11 points while the nation was flat.
->
-> One caution when reading the early years: before 1998, NAEP reading didn't allow testing accommodations, so the 1992 and 1994 results come from a slightly different sample. The Atlas marks those years.
->
-> https://reportcard.neverlost.studio/?a=reading-4&y=2024&s=MS&t=map
-
-**Alt text:** Line chart of Mississippi's grade 4 reading score from 1992 to 2024 with a shaded confidence band, rising from about 199 to 219. A dashed national line starts well above Mississippi and ends below it at 214.
-
-## More post ideas (no image yet)
-
-- **Grade 4 reading since 2019:** 40 of 51 states are significantly lower in 2024 than in 2019. Louisiana is the only state significantly higher.
-- **Who took part:** only 38 jurisdictions took the first state-level grade 8 math test in 1990. Every state has taken part since 2003.
-- **Your state:** share a link that opens on one state, for example `https://reportcard.neverlost.studio/?a=reading-4&y=2024&s=TX&t=map` (change `TX` to any state code).
+Alt text: Line chart of Mississippi's grade 4 reading score from 1992 to 2024 with a confidence band, rising from about 199 to 219, ending above the dashed national line at 214.
 
 ## Hashtags
 
-Use two or three at most: `#NAEP` `#NationsReportCard` `#EdData` `#K12` `#DataViz`
+Two or three at most: `#NAEP` `#NationsReportCard` `#LearningLoss` `#EdData` `#K12`
 
-## Tags and credit
+## Credit
 
 Data: National Center for Education Statistics (NCES), NAEP Data Service.
 Built by Michael Shouse, PhD · NeverLost Studio.
